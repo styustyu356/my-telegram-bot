@@ -5,7 +5,6 @@ import random
 import os
 from datetime import datetime
 
-
 import aiohttp
 from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters import Command
@@ -33,8 +32,14 @@ def save_data(d):
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(d, f, ensure_ascii=False, indent=2)
 
-
 data = load_data()
 reminders = []          # напоминания (живут до перезапуска бота)
 chat_users = set()      # кто сейчас в режиме болтовни
-chat_history = {}       # uid
+chat_history = {}       # uid -> последние сообщения пользователя
+
+# ================= СОСТОЯНИЯ =================
+class DialogStates(StatesGroup):
+    waiting_for_city = State()
+    waiting_for_bday = State()
+    waiting_for_note = State()
+    waiting_for_guess
