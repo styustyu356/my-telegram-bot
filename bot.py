@@ -15,8 +15,6 @@ from aiogram.fsm.state import State, StatesGroup
 
 # ================= НАСТРОЙКИ =================
 TOKEN = os.environ.get("TOKEN")
-if not TOKEN:
-    logging.error("Не задан TOKEN! Запусти с переменной окружения TOKEN=...")
 
 logging.basicConfig(level=logging.INFO)
 DATA_FILE = "bot_data.json"
