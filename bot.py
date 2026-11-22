@@ -13,7 +13,7 @@ from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 
 # ================= НАСТРОЙКИ =================
-TOKEN = "9247024816:AAHT4THlYvjsJ16DiC70ZYqdSR_4xTeHPo0"
+TOKEN = "9247024816:AAEbwJgs01PTW6cEFFtN58xWRqCMobIWIS0"
 
 if "ВСТАВЬ" in TOKEN or len(TOKEN) < 20:
     print("=" * 55)
