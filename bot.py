@@ -13,16 +13,9 @@ from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 
 # ================= НАСТРОЙКИ =================
-TOKEN = "9247024816:AAEbwJgs01PTW6cEFFtN58xWRqCMobIWIS0"
+import os
+TOKEN = os.environ.get("TOKEN")
 
-if "ВСТАВЬ" in TOKEN or len(TOKEN) < 20:
-    print("=" * 55)
-    print("Сначала вставь токен!")
-    print("Открой bot.py в Блокноте и замени")
-    print("ВСТАВЬ_СЮДА_СВОЙ_ТОКЕН на токен от @BotFather.")
-    print("=" * 55)
-    input("Нажми Enter для выхода... ")
-    raise SystemExit
 
 logging.basicConfig(level=logging.INFO)
 DATA_FILE = "bot_data.json"
